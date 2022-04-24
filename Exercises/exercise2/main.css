@@ -1,0 +1,19 @@
+.dropped {
+     background-color: steelblue;
+}
+
+.flex{
+     display: flex;
+     gap: 10px;
+}
+
+#text {
+     position: absolute;
+}
+
+#dropzone,
+#dropzone2 {
+     width: 20rem;
+     border: 1px solid #212121;
+     height: 10rem;
+}
