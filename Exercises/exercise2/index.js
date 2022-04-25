@@ -13,15 +13,15 @@ text.ontouchmove = (event) => {
 }
 
 dropzone1.ondragenter = () => {
-     dropzone1.style.border = '3px dotted red'
+     dropzone1.style.border = '3px solid yellowgreen'
 }
+
 dropzone1.ondragleave = () => {
      dropzone1.style.border = ''
-     dropzone1.appendChild(text)
 }
 
 dropzone2.ondragenter = () => {
-     dropzone2.style.border = '3px dotted red'
+     dropzone2.style.border = '3px solid yellowgreen'
 }
 
 dropzone2.ondragleave = () => {
@@ -38,6 +38,7 @@ const onDrop = (element) => {
      element.ondrop = (event) => {
           event.preventDefault();
           element.appendChild(text)
+          element.style.border = ""
      }
 }
 
