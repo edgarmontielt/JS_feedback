@@ -1,0 +1,19 @@
+
+#app {
+     display: flex;
+     gap: 10px;
+}
+
+.dropzone { 
+     width: 20rem;
+     background-color: slategrey;
+     margin: 10px;
+     display: flex;
+     gap: 5px;
+}
+
+.element {
+     background-color: white;
+     padding: 10px;
+     margin: 20px auto;
+}
