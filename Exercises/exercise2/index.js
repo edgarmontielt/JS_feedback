@@ -14,7 +14,7 @@ text.ontouchmove = (event) => {
 
 const onDragEnter = (element) => {
      element.ondragenter = () => {
-          element.style.border = '3px solid yellowgreen'
+          element.style.border = '5px solid yellowgreen'
      }
 }
 
