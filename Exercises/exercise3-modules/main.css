@@ -4,15 +4,17 @@ body {
 }
 #app {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 .dropzone {
-  width: 20rem;
+  width: 18rem;
   height: 20rem;
   background-color: rgb(182, 197, 213);
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
