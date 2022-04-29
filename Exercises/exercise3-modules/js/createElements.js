@@ -1,3 +1,5 @@
+'use strict'
+
 import { addEventsToDropzone, addEventsToElement } from "./dragAndDrop.js"
 
 const createDropzones = (dropzones, container) => {

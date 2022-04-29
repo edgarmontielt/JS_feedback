@@ -1,3 +1,5 @@
+'use strict'
+
 import { createDropzones, createElements } from "./createElements.js"
 
 const dropzones = [1, 2, 3, 4, 5]
