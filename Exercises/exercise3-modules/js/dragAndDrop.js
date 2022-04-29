@@ -1,9 +1,15 @@
+'use strict'
+
+let parent;
+
 const addEventsToDropzone = (element) => {
-     element.ondragenter = () => {
+     element.ondragenter = (event) => {
           element.style.border = '4px solid #16aa4a'
+          // console.log(event);
+          // console.log(element.id);
      }
      element.ondragleave = () => {
-          element.style.border = ''
+          element.style = null
      }
      element.ondragover = (event) => {
           event.preventDefault()
@@ -11,17 +17,19 @@ const addEventsToDropzone = (element) => {
      element.ondrop = (event) => {
           event.preventDefault()
           const item = event.dataTransfer.getData('item')
-          element.appendChild(document.getElementById(item))
+          if (event.target.id !== parent) {
+               element.appendChild(document.getElementById(item))
+          }
           element.style.border = ''
      }
 }
-
 
 const addEventsToElement = (element) => {
      element.draggable = true
 
      element.ondragstart = (event) => {
           event.dataTransfer.setData('item', event.target.id)
+          parent = element.parentNode.id
      }
      element.ondrag = () => {
           element.style.opacity = '0'

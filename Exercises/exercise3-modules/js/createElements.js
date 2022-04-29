@@ -1,9 +1,10 @@
 import { addEventsToDropzone, addEventsToElement } from "./dragAndDrop.js"
 
 const createDropzones = (dropzones, container) => {
-     dropzones.forEach(() => {
+     dropzones.forEach((dropzone) => {
           const div = document.createElement('div')
           div.className = 'dropzone'
+          div.id = `zone${dropzone}`
           container.appendChild(div)
           addEventsToDropzone(div)
      })

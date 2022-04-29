@@ -1,4 +1,4 @@
-import { createDropzones, createElements } from "./js/createElements.js"
+import { createDropzones, createElements } from "./createElements.js"
 
 const dropzones = [1, 2, 3, 4, 5]
 const elements = [1, 2, 3, 4, 5]
