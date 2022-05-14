@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
+
 <body>
-    <form id="form">
-        <input type="text" name="url">
-        <p id="url_validation"></p>
-        <button>Enviar</button>
-    </form>
-    
+    <main class="form-container">
+        <form id="form">
+            <h1 class="title-form">Form</h1>
+            <input type="text" name="url" placeholder="URL">
+            <p id="url_validation" class="message-error"></p>
+            <input type="text" name="email" placeholder="Email"/>
+            <p id="email_validation" class="message-error"></p>
+            <button>Enviar</button>
+        </form>
+    </main>
+
     <script src="./index.js"></script>
 </body>
+
 </html>
