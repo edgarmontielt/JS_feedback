@@ -52,4 +52,6 @@ button {
   border: none;
   margin-left: auto;
   border-radius: 10px;
+  color: white;
+  font-weight: 500;
 }
