@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.notification {
+    background-color: #525252;
+    color: white;
+    padding: 3rem;
+    border-radius: 4px;
+    font-size: 24px;
+    position: relative;
+}
+
+.notification button {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    padding: 4px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.notification button:hover {
+    background: #000;
+}
+
+.notification a{ 
+    color: teal;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.transparent {
+    opacity: 0;
+}
+
+.fadeable {
+    transition: opacity .5s ease-in; /* ease-in -> entrando lento */
+
+}
