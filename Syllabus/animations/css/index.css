@@ -28,6 +28,7 @@ body {
     padding: 4px 6px;
     border-radius: 50%;
     cursor: pointer;
+    animation: rotation 1s infinite;
 }
 
 .notification button:hover {
@@ -46,5 +47,10 @@ body {
 
 .fadeable {
     transition: opacity .5s ease-in; /* ease-in -> entrando lento */
+}
 
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
 }

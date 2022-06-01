@@ -1,0 +1,35 @@
+#clock {
+    border: 1px solid black;
+    fill: lightgray;
+    stroke-linecap: round; /* puntas de las lineas */
+    stroke: rgb(163, 114, 40);
+}
+
+#clock .face {
+    stroke-width: 2;
+}
+
+#clock .ticks{
+    stroke-width: 1;
+}
+
+#clock .hands .hourhand {
+    stroke: blue;
+}
+
+#clock .hands .minutehand {
+    stroke: black;
+}
+
+#clock .hands {
+    stroke-width: 2;
+}
+
+#clock .numbers {
+    stroke: none;
+    fill: rgb(106, 82, 47);
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 7px;
+    text-anchor: middle;
+}
