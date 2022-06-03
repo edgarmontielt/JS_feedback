@@ -1,0 +1,27 @@
+#video {
+    width: 50%;
+}
+
+#play-video {
+    background: transparent;
+    border: 0;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+#play-video:hover {
+    opacity: .9;
+}
+
+#control {
+    position: absolute;
+    bottom: 10px;
+    left: 60px;
+    width: 30%;
+}
+
+.container-video {
+    position: relative;
+}
