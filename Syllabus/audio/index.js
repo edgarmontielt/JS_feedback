@@ -2,6 +2,7 @@
 
 const $ = item => document.querySelector(item)
 const video = $('#video')
+let duration
 
 video.removeAttribute('controls')
 
@@ -13,6 +14,17 @@ video.removeAttribute('controls')
 //     $('#play-video').innerHTML = "<i class='bx bx-play' style='color:#ffffff' ></i>"
 // })
 
+video.addEventListener('loadeddata', (event) => {
+    duration = event.target.duration
+    console.log(duration);
+})
+
+video.addEventListener('timeupdate', (event) => {
+    const percent = (event.target.currentTime / event.target.duration) * 100
+    $('#control').value = percent
+})
+
+
 $('#play-video').onclick = () => {
     if (video.paused) {
         video.play()
@@ -23,7 +35,8 @@ $('#play-video').onclick = () => {
     }
 }
 
-$('#control').onchange = (event) => {
-    console.log(event.target.value);
+// oninput se activa en cada step del range
+$('#control').oninput = (event) => {
+    video.currentTime = (duration / 100) * event.target.value
 }
 
