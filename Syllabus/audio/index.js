@@ -16,7 +16,6 @@ video.removeAttribute('controls')
 
 video.addEventListener('loadeddata', (event) => {
     duration = event.target.duration
-    console.log(duration);
 })
 
 video.addEventListener('timeupdate', (event) => {
@@ -28,10 +27,10 @@ video.addEventListener('timeupdate', (event) => {
 $('#play-video').onclick = () => {
     if (video.paused) {
         video.play()
-        $('#play-video').innerHTML = "<i class='bx bx-pause' style='color:#ffffff'></i>"
+        $('#play-video').innerHTML = "<i class='bx bx-pause bx-md' style='color:#ffffff'></i>"
     } else {
         video.pause()
-        $('#play-video').innerHTML = "<i class='bx bx-play' style='color:#ffffff' ></i>"
+        $('#play-video').innerHTML = "<i class='bx bx-play bx-md' style='color:#ffffff' ></i>"
     }
 }
 
@@ -40,3 +39,6 @@ $('#control').oninput = (event) => {
     video.currentTime = (duration / 100) * event.target.value
 }
 
+$('#fullscreen').onclick = () => {
+    video.requestFullscreen()
+}

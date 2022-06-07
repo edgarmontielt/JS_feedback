@@ -2,6 +2,10 @@
     width: 50%;
 }
 
+#video::-webkit-media-controls {
+    display: none;
+}
+
 #play-video {
     background: transparent;
     border: 0;
@@ -22,6 +26,24 @@
     width: 30%;
 }
 
+#fullscreen{
+    position: absolute;
+    bottom: 10px;
+    left: 40%;
+}
+
 .container-video {
     position: relative;
+}
+
+#play-video:fullscreen{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#play::-webkit-full-screen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
