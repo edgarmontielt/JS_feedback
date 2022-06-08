@@ -7,11 +7,11 @@ let duration
 
 video.removeAttribute('controls')
 
-video.addEventListener('loadeddata', (event) => {
+video.addEventListener('loadeddata', event => {
     duration = event.target.duration
 })
 
-video.addEventListener('timeupdate', (event) => {
+video.addEventListener('timeupdate', event => {
     const percent = (event.target.currentTime / event.target.duration) * 100
     $('#control').value = percent
 })
@@ -20,16 +20,24 @@ video.addEventListener('timeupdate', (event) => {
 $('#play-video').onclick = () => {
     if (video.paused) {
         video.play()
-        $('#play-video').innerHTML = "<i class='bx bx-pause bx-md' style='color:#ffffff'></i>"
+        $('#play-video').innerHTML = "<i class='bx bx-pause bx-sm' style='color:#ffffff'></i>"
     } else {
         video.pause()
-        $('#play-video').innerHTML = "<i class='bx bx-play bx-md' style='color:#ffffff' ></i>"
+        $('#play-video').innerHTML = "<i class='bx bx-play bx-sm' style='color:#ffffff' ></i>"
     }
 }
 
 // oninput se activa en cada step del range
-$('#control').oninput = (event) => {
+$('#control').oninput = event => {
     video.currentTime = (duration / 100) * event.target.value
+}
+
+$('#advance').onclick = () => {
+    video.currentTime += 10
+}
+
+$('#back').onclick = () => {
+    video.currentTime -= 10
 }
 
 $('#fullscreen').onclick = () => {
