@@ -2,17 +2,10 @@
 
 const $ = item => document.querySelector(item)
 const video = $('#video')
+const containerVideo = $('.container-video')
 let duration
 
 video.removeAttribute('controls')
-
-// video.addEventListener('playing', () => {
-//     alert('Playing')
-// })
-
-// video.addEventListener('pause', () => {
-//     $('#play-video').innerHTML = "<i class='bx bx-play' style='color:#ffffff' ></i>"
-// })
 
 video.addEventListener('loadeddata', (event) => {
     duration = event.target.duration
@@ -40,5 +33,9 @@ $('#control').oninput = (event) => {
 }
 
 $('#fullscreen').onclick = () => {
-    video.requestFullscreen()
+    if (!document.fullscreenElement) {
+        containerVideo.requestFullscreen()
+    } else {
+        document.exitFullscreen()
+    }
 }
