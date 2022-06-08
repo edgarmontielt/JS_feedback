@@ -5,6 +5,7 @@ const video = $('#video')
 const containerVideo = $('.container-video')
 let duration
 
+
 video.removeAttribute('controls')
 
 video.addEventListener('loadeddata', event => {
@@ -15,7 +16,6 @@ video.addEventListener('timeupdate', event => {
     const percent = (event.target.currentTime / event.target.duration) * 100
     $('#control').value = percent
 })
-
 
 $('#play-video').onclick = () => {
     if (video.paused) {
@@ -30,6 +30,10 @@ $('#play-video').onclick = () => {
 // oninput se activa en cada step del range
 $('#control').oninput = event => {
     video.currentTime = (duration / 100) * event.target.value
+}
+
+$('#control').onmouseover = event => {
+    console.log(video.currentTime)
 }
 
 $('#advance').onclick = () => {
