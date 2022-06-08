@@ -1,7 +1,7 @@
 'use strict'
 const $ = item => document.querySelector(item)
 
-function video() {
+export default function video() {
     const video = $('#video')
     const containerVideo = $('.container-video')
     let duration
@@ -36,11 +36,11 @@ function video() {
         console.log(video.currentTime)
     }
 
-    $('#advance').onclick = () => {
+    $('#advance-video').onclick = () => {
         video.currentTime += 10
     }
 
-    $('#back').onclick = () => {
+    $('#back-video').onclick = () => {
         video.currentTime -= 10
     }
 
@@ -52,5 +52,3 @@ function video() {
         }
     }
 }
-
-export default video

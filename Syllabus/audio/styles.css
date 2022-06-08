@@ -33,7 +33,7 @@
 #play-video {
   background: transparent;
   border: 0;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 #video::-webkit-media-controls {
