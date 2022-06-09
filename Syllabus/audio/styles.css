@@ -1,3 +1,6 @@
+body {
+  background-color: #212121;
+}
 .container-video {
   width: 60%;
   position: relative;
