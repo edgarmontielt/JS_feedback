@@ -30,10 +30,12 @@
   width: 100%;
 }
 
-#play-video {
+button {
   background: transparent;
   border: 0;
-  cursor: pointer;  
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
 }
 
 #video::-webkit-media-controls {
@@ -51,4 +53,37 @@
 }
 .controls-video:-webkit-full-screen {
   position: fixed;
+}
+
+/* audio */
+.container-audio {
+  background-color: black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 1rem;   
+}
+
+#control-audio {
+  appearance: none;
+  width: 100%;
+  background-color: rgb(23, 36, 40);
+  height: 10px;
+}
+
+.controls-audio {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#control-audio::-webkit-slider-thumb {
+  appearance: none;
+  background-color: rgb(54, 73, 78);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
 }

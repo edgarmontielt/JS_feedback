@@ -9,7 +9,6 @@ export default function audio() {
 
     audio.addEventListener('loadeddata', event => {
         duration = event.target.duration
-        console.log(duration);
     })
 
     audio.addEventListener('timeupdate', (event) => {
@@ -20,10 +19,10 @@ export default function audio() {
     $('#play-audio').onclick = () => {
         if (audio.paused) {
             audio.play()
-            $('#play-audio').innerHTML = "<i class='bx bx-pause bx-sm' style='color:#000'></i>"
+            $('#play-audio').innerHTML = "<i class='bx bx-pause bx-sm' style='color:#fff'></i>"
         } else {
             audio.pause()
-            $('#play-audio').innerHTML = "<i class='bx bx-play bx-sm' style='color:#000' ></i>"
+            $('#play-audio').innerHTML = "<i class='bx bx-play bx-sm' style='color:#fff' ></i>"
         }
     }
 
@@ -31,4 +30,11 @@ export default function audio() {
         audio.currentTime = (duration / 100) * event.target.value
     }
 
+    $('#back-audio').onclick = () => {
+        audio.currentTime -= 10
+    }
+
+    $('#advance-audio').onclick = () => {
+        audio.currentTime += 10
+    }
 }
