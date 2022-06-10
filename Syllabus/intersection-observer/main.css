@@ -22,3 +22,11 @@ body, h1 {
 .yellow{
     background-color: yellow;
 }
+
+#scroll {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    display: none;
+    transition: opacity .5s ease-in;
+}
