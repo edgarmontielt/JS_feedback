@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    max-width: 90%;
+    margin: 0px auto;
+}
+.scroll {
+  height: 60vh;
+  background: teal;
+}
+
+.image_container {
+  position: relative;
+}
+
+.overlay {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(0, 0, 0);
+    opacity: .8;
+    border-radius: 50%;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}

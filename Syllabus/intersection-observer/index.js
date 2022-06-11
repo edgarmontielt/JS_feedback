@@ -36,6 +36,7 @@ btn.onclick = () => {
 }
 
 const onIntersection = (changes) => {
+    console.log(changes);
     changes.forEach(change => {
         if (change.isIntersecting) {
             btn.style.display = 'block'
@@ -48,7 +49,7 @@ const onIntersection = (changes) => {
 const observer = new IntersectionObserver(onIntersection, {
     // root, // -> elemento usado como viewport(área de scroll) para la visibilidad del target
     // rootMargin, // -> si no se agraga todos los margenes serían 0
-    threshold : [0.5, 1], // que porcentaje de visibilidad del target, cuando se sobrepase el tamaño se ejecuta
+    threshold : [1, 1], // que porcentaje de visibilidad del target, cuando se sobrepase el tamaño se ejecuta
     // trackVisibility, 
     // delay
 })
