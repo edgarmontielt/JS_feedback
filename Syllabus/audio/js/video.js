@@ -32,7 +32,8 @@ export default function video() {
         video.currentTime = (duration / 100) * event.target.value
     }
 
-    $('#control').onmouseover = () => {
+    $('#control').onmouseover = (event) => {
+        console.log(event);
         console.log(video.currentTime)
     }
 
