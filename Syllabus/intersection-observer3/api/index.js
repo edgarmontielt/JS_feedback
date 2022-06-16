@@ -1,11 +1,9 @@
 'use strict'
 
-
 let url = 'https://rickandmortyapi.com/api/character'
 
 let characters = []
 const root = document.getElementById('root')
-
 const articles = document.getElementsByTagName('article')
 
 function observerCallback(entries) {
