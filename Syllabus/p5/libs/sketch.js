@@ -29,4 +29,6 @@ function draw(){
     rectangle(80, 80)
     fill(0)
     rectangle(60, 60)
+    fill(256)
+    rectangle(40, 40)
 }
