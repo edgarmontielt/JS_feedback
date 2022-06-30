@@ -1,0 +1,22 @@
+body {
+  color: #fff;
+  background-color: #212121;
+}
+
+/* -> using vars in new vars  */
+p {
+  border: 1px #fff solid;
+}
+
+.article {
+  background-color: black;
+}
+.article p {
+  line-height: 1em;
+}
+.article img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
