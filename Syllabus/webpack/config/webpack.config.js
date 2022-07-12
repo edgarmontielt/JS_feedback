@@ -1,9 +1,29 @@
 const path = require('path')
+const webpack = require('webpack')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin
+const { resolve } = require('path');
+
+const indexOutput = 'index.html';
+const rootPath = process.cwd()
 
 module.exports = {
-  entry: './src/js/index.js',
+  mode: 'development',
+  devtool: 'source-map',
+  devServer: {
+    port: 3000,
+    hot: true,
+    static: resolve(rootPath, 'build'),
+    open: true,
+    devMiddleware: {
+      publicPath: '/',
+    }
+  },
+  entry: {
+    index: './src/js/index.js',
+  },
   output: {
     path: path.resolve(__dirname, '../build'),
     filename: 'index.js'
@@ -77,9 +97,27 @@ module.exports = {
               }
             }
           },
-          'sass-loader'
+          {
+            loader: "sass-loader",
+            options: {
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+            },
+          },
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: resolve(rootPath, 'src/pages/index.html'),
+      filename: indexOutput,
+      chunks: ['landing']
+    }),
+    new MiniCssExtractPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new LinkTypePlugin({
+      '*.css': 'text/css'
+    })
+  ]
 }
