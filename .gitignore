@@ -1,2 +1,12 @@
+# Files statics
 assets
+
+# Library p5.js
 p5.js
+
+# Dependencies
+node_modules/
+
+# Compiled output
+dist/
+build/
