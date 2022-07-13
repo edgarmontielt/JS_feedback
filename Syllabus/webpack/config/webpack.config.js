@@ -10,8 +10,14 @@ const indexOutput = 'index.html';
 const rootPath = process.cwd()
 
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.json', '.css'],
+  },
+  entry: {
+    index: './src/js/index.js',
+  },
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'eval-source-map',
   devServer: {
     port: 3000,
     hot: true,
@@ -21,12 +27,11 @@ module.exports = {
       publicPath: '/',
     }
   },
-  entry: {
-    index: './src/js/index.js',
-  },
   output: {
     path: path.resolve(__dirname, '../build'),
-    filename: 'index.js'
+    filename: 'js/[name].[contenthash].js',
+    chunkFilename: 'js/[id].[chunkhash].js',
+    publicPath: '/',
   },
   optimization: {
     minimizer: [
@@ -105,7 +110,11 @@ module.exports = {
             },
           },
         ]
-      }
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
     ]
   },
   plugins: [
@@ -114,10 +123,10 @@ module.exports = {
       filename: indexOutput,
       chunks: ['landing']
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
     new webpack.HotModuleReplacementPlugin(),
-    new LinkTypePlugin({
-      '*.css': 'text/css'
-    })
   ]
 }
