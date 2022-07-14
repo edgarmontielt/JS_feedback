@@ -21,7 +21,7 @@ module.exports = {
   devServer: {
     port: 3000,
     hot: true,
-    static: resolve(rootPath, 'build'),
+    static: resolve(__dirname, '../build'),
     open: true,
     devMiddleware: {
       publicPath: '/',

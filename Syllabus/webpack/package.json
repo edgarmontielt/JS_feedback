@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --config ./config/webpack.config.js",
-    "dev": "webpack serve --mode=development --config ./config/webpack.config.js --open"
+    "dev": "webpack serve --mode=development "
   },
   "keywords": [],
   "author": "edgarmt.dev",
@@ -30,6 +30,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
-    "html-loader": "^4.1.0"
+    "html-loader": "^4.1.0",
+    "three": "^0.142.0"
   }
 }
