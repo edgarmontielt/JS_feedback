@@ -1,3 +1,3 @@
 export function greet() {
-    console.log('Hi, this is Webpack')
+    console.log('Hi, this is Webpack JS')
 }

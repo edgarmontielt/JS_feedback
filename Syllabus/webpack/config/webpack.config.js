@@ -11,7 +11,7 @@ module.exports = {
   devServer: {
     port: 3000,
     hot: true,
-    static: path.join(__dirname, 'build'),
+    static: path.join(__dirname, '../build'),
     open: true,
     devMiddleware: {
       publicPath: '/',
@@ -98,10 +98,6 @@ module.exports = {
             },
           },
         ]
-      },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
       },
     ]
   },

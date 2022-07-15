@@ -4,4 +4,6 @@ $gradient: linear-gradient(to right, $primaryColor, $secondaryColor);
 
 body {
     background: $gradient;
+    color: white;
 }
+
