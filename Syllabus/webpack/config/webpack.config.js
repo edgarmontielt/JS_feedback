@@ -2,36 +2,24 @@ const path = require('path')
 const webpack = require('webpack')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin
-const { resolve } = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin')
 
-const indexOutput = 'index.html';
-const rootPath = process.cwd()
 
 module.exports = {
-  resolve: {
-    extensions: ['.js', '.json', '.css'],
-  },
-  entry: {
-    index: './src/js/index.js',
-  },
-  mode: 'development',
+  entry: './src/js/index.js',
   devtool: 'eval-source-map',
   devServer: {
     port: 3000,
     hot: true,
-    static: resolve(__dirname, '../build'),
+    static: path.join(__dirname, 'build'),
     open: true,
     devMiddleware: {
       publicPath: '/',
     }
   },
   output: {
-    path: path.resolve(__dirname, '../build'),
-    filename: 'js/[name].[contenthash].js',
-    chunkFilename: 'js/[id].[chunkhash].js',
-    publicPath: '/',
+    path: path.join(__dirname, '../build'),
+    filename: 'index.js',
   },
   optimization: {
     minimizer: [
@@ -119,14 +107,14 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: resolve(rootPath, 'src/pages/index.html'),
-      filename: indexOutput,
-      chunks: ['landing']
+      template: path.join(__dirname, '../src/pages/index.html'),
+      filename: path.join(__dirname, '../build/index.html'),
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
+    new MiniCssExtractPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ]
-}
+}   
+// {
+//   filename: '[name].css',
+//   chunkFilename: '[id].css',
+// }
